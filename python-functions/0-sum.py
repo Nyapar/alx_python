@@ -1,6 +1,5 @@
-#!/usr/bin/bash/python3
-def add(a, b):
-    return a + b
-result = add(5, 3)
-print(result)
-
+#!/usr/bin/python3
+def square_matrix_simple(matrix=[]):
+    if not matrix:
+        print()
+    return [[element * element for element in row] for row in matrix]
