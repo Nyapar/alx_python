@@ -1,9 +1,10 @@
-#!/usr/bin/python3
-"""Class Square that defines a square.
-    """
-
+"""
+alx task 0, classes complete
+"""
 
 class Square:
-    """Class Square that defines a square.
     """
-    pass
+    task 0, class project
+    """
+    def __init__(self, size):
+        self.__size = size
