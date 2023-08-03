@@ -1,15 +1,18 @@
-"""A class that defines a square"""
-
+"""
+based on 0-square.py
+"""
 
 class Square:
-    """Creates a square.
-    Private instance attributes: size
     """
-
-    def __init__(self, size=0):
-        """Initializes data."""
-        if not isinstance(size, int):
+    task 1 classes
+    """
+    def __init__(self, size = 0):
+        if type(size) is not int:
             raise TypeError("size must be an integer")
         elif size < 0:
             raise ValueError("size must be >= 0")
-        self.__size = size
+        else:
+            self.__size = size
+
+        def area(self):
+            return self.__size * self.__size
