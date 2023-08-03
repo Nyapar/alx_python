@@ -25,4 +25,12 @@ class Square:
         def area(self):
             return self.size ** 2
 
+        def my_print(self):
+            if self.__size == 0:
+                print(0)
+            else:
+                for row in range(self.__size):
+                    for column in range(kself.__size):
+                        print("#", end ="")
+
         
