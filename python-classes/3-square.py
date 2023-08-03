@@ -1,10 +1,10 @@
 """
-A class that defines a square by: (based on 2-square.py)
+based on 0-square.py
 """
 
 class Square:
     """
-    task 0 classess
+    task 1 classes
     """
     def __init__(self, size):
         self.__size = size
@@ -22,5 +22,7 @@ class Square:
         else:
             self.__size = value
 
-    def area(self):
-        return self.size ** 2
+        def area(self):
+            return self.size ** 2
+
+        
