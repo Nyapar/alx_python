@@ -5,10 +5,9 @@ A class that defines a square by: (based on 2-square.py)
 
 
 class Square:
-    """Creates a square.
-    Private instance attributes: size
     """
-
+    task 0 classess
+    """
     def __init__(self, size):
         self.__size = size
 
