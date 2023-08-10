@@ -1,11 +1,29 @@
+# import requests module
 import requests
-
-url = "https://alu-intranet.hbtn.io/status"
+ 
 try:
-    response = requests.get(url)
-    response.raise_for_status()  # Raise an exception if the response status is not OK (200)
-    print("Body response:")
-    print("\t- type:", type(response.text))
-    print("\t- content:", response.text)
+    # Making a get request to a valid URL
+    response = requests.get('https://alu-intranet.hbtn.io/status')
+ 
+    # Check if the request was successful (status code 200)
+    if response.status_code == 200:
+        # Print the response content
+        print(response.text)
+    else:
+        # Print an error message if the request was not successful
+        print(f"Request failed with status code: {response.status_code}")
+ 
+    # Making a get request to an incorrect URL
+    response = requests.get('https://alu-intranet.hbtn.io/status')
+ 
+    # Check if the request was successful (status code 200)
+    if response.status_code == 200:
+        # Print the response content
+        print(response.text)
+    else:
+        # Print an error message if the request was not successful
+        print(f"Request failed with status code: {response.status_code}")
+ 
 except requests.exceptions.RequestException as e:
-    print("An error occurred:", e)
+    # Handle any exceptions that may occur during the request
+    print(f"An error occurred: {e}")
