@@ -1,4 +1,3 @@
-#!/usr/bin/python3
 import requests
 import sys
 
@@ -11,7 +10,7 @@ def get_request_id(url):
             return request_id
         else:
             return "X-Request-Id not found in the response header"
-    except requests.exceptions.RequestException as e:
+except requests.exceptions.RequestException as e:
         return f"An error occurred: {e}"
 
 if _name_ == "_main_":
