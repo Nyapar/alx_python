@@ -13,7 +13,7 @@ def search_states(username, password, database_name, state_name):
     cursor = connection.cursor()
 
     # Prepare the parameterized SQL query and execute it
-    query = "SELECT * FROM states WHERE name = %s ORDER BY states.id ASC"
+    query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
     cursor.execute(query, (state_name,))
 
     # Fetch all the rows and display the results
