@@ -1,35 +1,18 @@
-import MySQLdb
+#!/usr/bin/python3
+"""
+List all cities from a database
+"""
 import sys
+import MySQLdb
 
-def list_cities(username, password, database_name):
-    # Connect to the MySQL server
-    try:
-        connection = MySQLdb.connect(user=username, passwd=password, db=database_name, host='localhost', port=3306)
-    except MySQLdb.Error as e:
-        print("Error connecting to MySQL:", e)
-        sys.exit(1)
+if __name__ == '__main__':
+    db = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2],
+                         db=sys.argv[3], port=3306)
 
-    # Create a cursor object to interact with the database
-    cursor = connection.cursor()
+    cur = db.cursor()
+    cur.execute("SELECT cities.id, cities.name, states.name \
+    FROM cities JOIN states ON cities.state_id = states.id;")
+    states = cur.fetchall()
 
-    # Execute the SQL query to retrieve all cities and sort by cities.id
-    query = "SELECT * FROM cities ORDER BY cities.id ASC"
-    cursor.execute(query)
-
-    # Fetch all the rows and display the results
-    cities = cursor.fetchall()
-    for city in cities:
-        print(city)
-
-    # Close the cursor and the database connection
-    cursor.close()
-    connection.close()
-
-if __name__ == "__main__":
-    if len(sys.argv) != 4:
-        print("Usage: python script.py <username> <password> <database_name>")
-        sys.exit(1)
-
-    username, password, database_name = sys.argv[1], sys.argv[2], sys.argv[3]
-    list_cities(username, password, database_name)
-
+    for state in states:
+        print(state)
