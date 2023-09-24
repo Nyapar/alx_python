@@ -1,10 +1,9 @@
 #!/usr/bin/python3
-"""I documented you"""
-
-import urllib.request
+"""Python URL Script"""
+import requests
 import sys
 
 if __name__ == '__main__':
-    with urllib.request.urlopen(sys.argv[1]) as response:
-        header = response.info()
-        print(header["X-Request-Id"])
+    url = sys.argv[1]
+    response = requests.get(url)
+    print("{}".format(response.headers.get("X-Request-Id")))
